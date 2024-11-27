@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito de Digitação</title>
+    <style>
+        #texto {
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto"></div>
+    
+    <script>
+        const frase = "Olá, bem-vindo ao meu projeto de animação em JavaScript!";
+        let indice = 0;
+        const texto = document.getElementById("texto");
+
+        function digitar() {
+            if (indice < frase.length) {
+                texto.textContent += frase.charAt(indice);
+                indice++;
+            }
+        }
+
+        setInterval(digitar, 100); // Escreve uma letra a cada 100ms
+    </script>
+</body>
+</html>
