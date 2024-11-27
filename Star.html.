@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuva de Estrelas</title>
+    <style>
+        body {
+            background-color: black;
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+        }
+        .estrela {
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            animation: cair 3s linear infinite;
+        }
+        @keyframes cair {
+            from {
+                top: -10px;
+            }
+            to {
+                top: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function criarEstrela() {
+            const estrela = document.createElement("div");
+            estrela.className = "estrela";
+            estrela.style.left = Math.random() * window.innerWidth + "px";
+            estrela.style.animationDuration = Math.random() * 2 + 1 + "s";
+            document.body.appendChild(estrela);
+
+            setTimeout(() => estrela.remove(), 3000);
+        }
+
+        setInterval(criarEstrela, 100);
+    </script>
+</body>
+</html>
